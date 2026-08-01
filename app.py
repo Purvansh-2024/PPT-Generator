@@ -127,22 +127,35 @@ if (user_input) & (leader_agent):
         except Exception as err:
           st.error("Error Code: ", err)
 
- with tab2:
-   if st.button("Fetch Latest News", key = "News-Button"):
-     with st.spinner("Running Agent"):
-       try:
-         prompt = """give latest News related to given user Query
-         in Dynamic HTML, Output with cards Design Format.
-         Strict HTML Output, No any markdowns Response
-         User Query: """ + user_input
+  with tab2:
+    if st.button("Fetch Latest News", key = "News-Button"):
+      with st.spinner("Running Agent"):
+        try:
+          prompt = """give latest News related to given user Query
+          in Dynamic HTML, Output with cards Design Format.
+          Strict HTML Output, No any markdowns Response
+          User Query: """ + user_input
 
-         response = leader_agent.invoke[{'messages':[{'role':'user',
+          response = leader_agent.invoke[{'messages':[{'role':'user',
                                                       'content':prompt}]})
 
-         code = response['messages'][-1].content[-1]['text']
-         st.html(code, width="stretch",unsafe_allow_javascript=True)
+          code = response['messages'][-1].content[-1]['text']
+          st.html(code, width="stretch",unsafe_allow_javascript=True)
 
-       except Exceptio as err:
-         st.error("Error Code: ", err)
+        except Exceptio as err:
+          st.error("Error Code: ", err)
 
-          
+  with tab3:
+     if st.button("Clicl to Generate PPT", Key = "PPT-Button"):
+       with st.spinner("Running Agent"):
+         try:
+           code = run_agent(leader_agent, user_input)
+           st.html(code, width="stretch",unsafe_allow_javascript=True)
+
+           if st.download(label = "Download PPT",
+                         data = code,
+                         file_name = 'ppt.html',
+                         mime = 'text/html'):
+             st.success("PPT Downloaded Succesffully!!")
+         except Exception as err:
+           st.error("Error Code: ", err)
