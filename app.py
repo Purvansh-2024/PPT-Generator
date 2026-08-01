@@ -23,7 +23,7 @@ st.sidebar.title("Give API Keys")
 TAVILY_API_KEY = "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"
 GOOGLE_API_KEY = "AQ.Ab8RN6IIXf_wOrMGZJ5DKzSFe7smA4vzx_vyFO5UZzFT_S3pjw"
 
-ALL_API = [tapi,api]
+ALL_API = [TAVILY_API_KEY,GOOGLE_API_KEY]
 
 if not all(ALL_API):
   st.sidebar.error("Must Pass All API-Keys")
