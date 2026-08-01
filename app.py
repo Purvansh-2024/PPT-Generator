@@ -11,6 +11,8 @@ from tavily import TavilyClient
 import numpy as np
 import streamlit as st
 
+st.set_page_config(layout = "wide")
+
 #=====================STEP 2 LOAD ENV and API-KEYS======================
 st.title("Agentic PPT Generator")
 
