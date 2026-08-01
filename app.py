@@ -117,7 +117,7 @@ tab1,tab2,tab3 = st.tabs(["Generate Image",
 
 user_input = st.text_area9'write Prompt & click Enter")
 
-if (user_input) & (leader_agent):
+if (user_input):
   with tab1:
     if st.button("Click to Generate Image",key = "Image-Button"):
       with st.spinner("Running Agent"):
