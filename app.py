@@ -115,7 +115,7 @@ tab1,tab2,tab3 = st.tabs(["Generate Image",
                          "Fetch News",
                          "Generate PPT"])
 
-user_input = st.text_area9'write Prompt & click Enter")
+user_input = st.text_area("write Prompt & click Enter")
 
 if (user_input):
   with tab1:
