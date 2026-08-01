@@ -105,7 +105,7 @@ if all(ALL_API):
       ]
   
   )
- leader_agent
+ # leader_agent
 else:
 st.info("Give API-Keys first to load agent")
 
